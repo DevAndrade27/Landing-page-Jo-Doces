@@ -1,0 +1,115 @@
+#home {
+  display: flex; /* Ativa o Flexbox para organizar os elementos filhos lado a lado */
+  min-height: calc(
+    100vh - 91px
+  ); /* Garante que a seção ocupe quase toda a altura da tela, descontando a altura do header */
+  position: relative; /* Permite posicionar elementos filhos com position absolute */
+}
+
+#cta {
+  width: 35%; /* A largura dessa seção é 35% do contêiner pai */
+  display: flex; /* Organiza os elementos internos em flex */
+  flex-direction: column; /* Alinha os itens em coluna */
+  gap: 28px; /* Espaçamento entre os elementos internos */
+  margin-top: 5%; /* Espaço superior */
+}
+
+#cta .title {
+  font-size: 4rem; /* Tamanho grande para o título */
+  color: var(--color-neutra-1); /* Cor escura para destaque */ & span {
+    color: #facb56; /* Destaca o texto dentro do span com amarelo */
+  }
+}
+
+#cta .description {
+  font-size: 1.2rem; /* Fonte um pouco maior para facilitar a leitura */
+  color: var(--color-neutra-1); /* Cor escura */
+}
+
+#cta_buttons {
+  display: flex; /* Os botões são alinhados lado a lado */
+  gap: 24px; /* Espaço entre eles */
+}
+
+#cta_buttons a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color: var(--color-neutra-1); /* Cor do texto dos links */
+}
+
+#phone_button {
+  display: flex; /* Ícone e texto alinhados na horizontal */
+  gap: 8px; /* Espaço entre o ícone e o texto */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 8px 14px; /* Espaçamento interno */
+  font-weight: 500; /* Um pouco mais de destaque no texto */
+  box-shadow: 0px 0px 12px 14px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar o botão */
+  border-radius: 12px; /* Cantos arredondados */
+  font-size: 11px; /* Fonte menor */
+}
+
+#phone_button button {
+  box-shadow: none; /* Remove qualquer sombra de botão padrão */
+}
+
+#banner {
+  display: flex; /* Flexbox ativo */
+  justify-content: end; /* Alinha conteúdo à direita */
+  align-items: start; /* Alinha ao topo */
+  width: 70%; /* Largura da seção de imagem */
+  z-index: 2; /* Fica acima do shape de fundo */
+}
+
+#banner img {
+  height: 100%; /* Altura total do elemento pai */
+  width: fit-content; /* Largura mínima necessária para o conteúdo */
+  position: relative; /* Para usar o top */
+  height: auto; /* Ajuste automático de altura */
+  top: 15%; /* Desce a imagem 15% */
+}
+
+.shape {
+  background-color: var(--primary-color-2); /* Cor da forma de fundo */
+  position: absolute; /* Fora do fluxo normal da página */
+  width: 60%; /* Largura da forma */
+  height: 100%; /* Altura total da seção */
+  border-radius: 40% 30% 0% 20%; /* Cria uma forma personalizada com curvas */
+  top: 0;
+  right: 0%;
+  z-index: 1; /* Fica atrás da imagem */
+}
+
+/* Media query para telas com largura até 1170px */
+@media screen and (max-width: 1170px) {
+  #home {
+    min-height: 100%;
+    padding-top: 0px;
+  }
+
+  /* Esconde elementos para versão mobile/tablet */
+  #banner,
+  #banner img,
+  #home .shape {
+    display: none;
+  }
+
+  #cta {
+    width: 100%; /* Ocupa toda a largura */
+    align-items: center; /* Centraliza os itens */
+    justify-content: center;
+    text-align: center; /* Centraliza os textos */
+    margin-top: 0%;
+
+    & .title {
+      font-size: 2.5rem; /* Tamanho do título reduzido */
+    }
+  }
+
+  /* Media query interna para telas ainda menores (ex: celular pequeno) */
+  @media screen and (max-width: 450px) {
+    #cta_buttons {
+      display: flex;
+      flex-wrap: wrap; /* Quebra os botões em duas linhas se necessário */
+      justify-content: center;
+    }
+  }
+}

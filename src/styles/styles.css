@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("header.css");
+@import url("menu.css");
+@import url("home.css");
+@import url("testmonials.css");
+@import url("footer.css");
+
+:root {
+  --primary-color-1: #fff9ea;
+  --primary-color-2: #ffe8b4;
+  --primary-color-3: #ffe100;
+  --primary-color-4: #ffcb45;
+  --primary-color-5: #f8d477;
+  --primary-color-6: #e9a209;
+
+  --color-neutral-0: #fff;
+  --color-neutral-1:#1d1d1d;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color-1);
+}
+section {
+  padding: 28px 8%;
+}
+.btn-default {
+  display: flex;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  background-color: var(--primary-color-5);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-default:hover {
+  background-color: var(--primary-color-4);
+}
+
+.social-media-buttons {
+  display: flex;
+  gap: 8px;
+}
+.social-media-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-neutra-1);
+  font-size: 1.25rem;
+  transition: box shadow color 0.3s ease;
+  width: 45px;
+  height: 40px;
+  background-color: var(--color-neutra-0);
+  border-radius: 8px;
+  color: var(--color-neutra-1);
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-media-buttons a:hover {
+  box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+  color: var(--primary-color-4);
+  font-size: 1.563rem;
+}
+
+.section-subtitle {
+  font-size: 2.1875rem;
+}

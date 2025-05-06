@@ -1,0 +1,97 @@
+/* Estilização do header */
+header {
+    width: 100%;
+    padding: 28px 8%; /* Espaçamento interno do header */
+    position: sticky;            /* Faz o header ficar fixo na tela */
+    top: 0;                     /* Gruda no topo */
+    width: 100%;                /* Ocupa toda a largura da tela */
+    background-color: var(--primary-color-1);   /* Cor de fundo (necessário, senão pode ficar transparente ao rolar) */
+    z-index: 3;              /* Fica acima dos outros elementos */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra leve para destaque */
+}
+
+/* Espaço interno e layout do navbar */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Logo da navbar */
+#nav_logo {
+    font-size: 24px;
+    color: pink;
+}
+
+/* Lista de itens da navbar */
+#nav_list {
+    display: flex;
+    list-style: none;
+    gap: 48px; /* Espaço entre os itens do menu */
+}
+
+/* Estilo padrão dos links do menu */
+.nav-item a {
+    text-decoration: none;
+    color: #1d1d1dad;
+    font-weight: 600;
+}
+
+/* Estilo do item ativo (página atual) */
+.nav-item.active a {
+    color: var(--color-neutra-1);
+    border-bottom: 3px solid var(--primary-color-3);
+}
+
+/* Oculta o menu e botão mobile por padrão */
+#mobile_menu {
+    display: none;
+}
+
+#mobile_btn {
+    display: none;
+}
+
+/* =========================
+   Responsividade: até 1170px
+   ========================= */
+@media screen and (max-width:1170px) {
+
+    /* Esconde o menu principal e o botão padrão da navbar */
+    #nav_list,
+    #navbar .btn-default {
+        display: none;
+    }
+
+    /* Exibe o botão do menu mobile */
+    #mobile_btn {
+        display: block;
+        border: none;                 
+        background: transparent;      
+        font-size: 1.5rem;            
+        cursor: pointer;             
+    }
+
+    /* Estilo do menu mobile quando está ativo */
+    #mobile_menu.active {
+        display: flex;
+        flex-direction: column;       
+        align-items: center;          
+    }
+
+    /* Lista de itens do menu mobile */
+    #mobile_nav_list {
+        display: flex;
+        flex-direction: column;       
+        gap: 12px;                    
+        padding: 0;
+        margin: 12px 0px;            
+    }
+
+    /* Itens individuais do menu mobile */
+    #mobile_nav_list .nav-item {
+        list-style: none;            
+        text-align: center;          
+    }
+}
